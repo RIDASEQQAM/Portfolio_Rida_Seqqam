@@ -1,34 +1,67 @@
-<mat-toolbar color="primary">
-  <span>Portfolio</span>
-  <span class="spacer"></span>
-  <a mat-button routerLink="/">Home</a>
-  <a mat-button routerLink="/about">About</a>
-  <a mat-button routerLink="/projects">Projects</a>
-  <a mat-button routerLink="/experience">Experience</a>
-  <a mat-button routerLink="/contact">Contact</a>
-  <a mat-button routerLink="/resume">Resume</a>
-</mat-toolbar>
-<main>
-  <router-outlet></router-outlet>
-</main>
-<mat-toolbar color="primary">
-  <span>Portfolio</span>
-  <span style="flex: 1 1 auto;"></span>
-  <a mat-button routerLink="/">Home</a>
-  <a mat-button routerLink="/about">About</a>
-  <a mat-button routerLink="/projects">Projects</a>
-  <a mat-button routerLink="/experience">Experience</a>
-  <a mat-button routerLink="/contact">Contact</a>
-  <a mat-button routerLink="/">Home</a>
-  <a mat-button routerLink="/about">About</a>
-  <a mat-button routerLink="/projects">Projects</a>
-  <a mat-button routerLink="/experience">Experience</a>
-  <a mat-button routerLink="/contact">Contact</a>
-  <a mat-button routerLink="/resume">Resume</a>
-</mat-toolbar>
-<main style="padding: 24px;">
-  <router-outlet></router-outlet>
-</main>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="over">
+    <mat-nav-list>
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+
+      <a mat-list-item routerLink="/about" (click)="sidenav.close()">
+        <mat-icon>person</mat-icon>
+        <span>About</span>
+      </a>
+      <a mat-list-item routerLink="/projects" (click)="sidenav.close()">
+        <mat-icon>code</mat-icon>
+        <span>Projects</span>
+      </a>
+      <a mat-list-item routerLink="/experience" (click)="sidenav.close()">
+        <mat-icon>work</mat-icon>
+        <span>Experience</span>
+      </a>
+      <a mat-list-item routerLink="/contact" (click)="sidenav.close()">
+        <mat-icon>mail</mat-icon>
+        <span>Contact</span>
+      </a>
+      <a mat-list-item routerLink="/resume" (click)="sidenav.close()">
+        <mat-icon>description</mat-icon>
+        <span>Resume</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()" class="menu-button">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Rida Seqqam</span>
+      <span class="spacer"></span>
+      <div class="desktop-menu">
+        <a mat-button routerLink="/">Home</a>
+        <a mat-button routerLink="/about">About</a>
+        <a mat-button routerLink="/projects">Projects</a>
+        <a mat-button routerLink="/experience">Experience</a>
+        <a mat-button routerLink="/contact">Contact</a>
+        <a mat-button routerLink="/resume">Resume</a>
+      </div>
+    </mat-toolbar>
+
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+
+    <footer>
+      <mat-toolbar>
+        <span>© 2025 Rida Seqqam. All rights reserved.</span>
+        <span class="spacer"></span>
+        <a mat-icon-button href="https://github.com/RIDASEQQAM" target="_blank" rel="noopener noreferrer">
+          <mat-icon>code</mat-icon>
+        </a>
+        <a mat-icon-button href="https://linkedin.com/in/rida-seqqam/" target="_blank" rel="noopener noreferrer">
+          <mat-icon>linkedin</mat-icon>
+        </a>
+      </mat-toolbar>
+    </footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>
     <div class="left-side">
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -4,9 +4,10 @@ import { MatChipsModule } from '@angular/material/chips';
 
 @Component({
   selector: 'app-about',
+  standalone: true,
   imports: [MatCardModule, MatChipsModule],
   templateUrl: './about.component.html',
-  styleUrl: './about.component.scss'
+  styleUrls: ['./about.component.scss']
 })
 export class AboutComponent {
 

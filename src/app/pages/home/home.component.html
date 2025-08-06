@@ -1,1 +1,29 @@
-<p>home works!</p>
+<section class="hero">
+  <div class="content">
+    <h1>Hi, I'm Rida Seqqam</h1>
+    <h2>Full Stack Developer</h2>
+    <p>I build modern web applications with Angular, Spring Boot, and more.</p>
+    <div class="cta-buttons">
+      <a mat-raised-button color="primary" routerLink="/projects">View My Work</a>
+      <a mat-stroked-button routerLink="/contact">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<section class="featured-projects">
+  <h2>Featured Projects</h2>
+  <div class="project-grid">
+    <mat-card *ngFor="let project of featuredProjects">
+      <mat-card-header>
+        <mat-card-title>{{ project.title }}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image [src]="project.image" [alt]="project.title" [title]="project.title">
+      <mat-card-content>
+        <p>{{ project.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button [href]="project.link" target="_blank" rel="noopener noreferrer">Learn More</a>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</section>
